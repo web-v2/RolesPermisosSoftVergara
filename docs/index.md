@@ -10,5 +10,5 @@ Este proyecto fue realizado por Samir Vergara como bajo trabajo colaborativo en 
 #### Via Git
 
 ```bash
-git clone https://github.com/ColorlibHQ/AdminLTE.git
+git clone https://github.com/web-v2/RolesPermisosSoftVergara.git
 ```
