@@ -1,0 +1,38 @@
+<IfModule mod_rewrite.c>
+# Activar rewrite
+RewriteEngine on
+ErrorDocument 404 /404.html
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+</IfModule>
+
+
+#la siguiente linea crea la primera ruta Amigable para iniciar el sitio web
+RewriteRule ^Inicio$ index.php [NC,L]
+RewriteRule ^Login$ index.php [NC,L]
+RewriteRule ^Dashboard$ views/Home.php [NC,L]
+RewriteRule ^Logout$ logout.php [NC,L]
+
+
+RewriteRule ^Usuarios$ views/usuario/users.php [NC,L]
+RewriteRule ^Roles$ views/roles/index.php [NC,L]
+RewriteRule ^editar-rol/([0-9]*)$ views/roles/editar.php?token=$1 [NC,L]
+RewriteRule ^eliminar-rol/([0-9]*)$ views/roles/borrar.php?token=$1 [NC,L]
+RewriteRule ^modulos/([0-9]*)$ views/roles/modulos.php?token=$1 [NC,L]
+
+RewriteRule ^Permisos$ views/permisos/index.php [NC,L]
+RewriteRule ^editar/([0-9]*)$ views/permisos/editar.php?token=$1 [NC,L]
+RewriteRule ^ver-permisos/([0-9]*)$ views/permisos/ver.php?token=$1 [NC,L]
+
+RewriteRule ^Modulos$ views/modulos/index.php [NC,L]
+RewriteRule ^editar-modulo/([0-9]*)$ views/modulos/editar.php?token=$1 [NC,L]
+RewriteRule ^borrar-modulo/([0-9]*)$ views/modulos/borrar.php?token=$1 [NC,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php80” package as the default “PHP” programming language.
+
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php80 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
